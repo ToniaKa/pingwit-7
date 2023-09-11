@@ -1,5 +1,5 @@
 package pl.pingwit.Homework_2;
-// MAX и MIN значения типов
+// MAX и MIN значения  типов
 public class Task_1 {
 
     public static void main(String[] args) {
