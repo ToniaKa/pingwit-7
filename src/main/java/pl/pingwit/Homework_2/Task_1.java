@@ -2,6 +2,8 @@ package pl.pingwit.Homework_2;
 // MAX и MIN значения типов
 public class Task_1 {
 
+    // в джаве принято именовать пакеты с маленькой буквы. переименуй, плиз, используя Refactor -> Rename
+    // (нужно кликнуть правой клавишей на пакете)
     public static void main(String[] args) {
         System.out.println(Byte.MAX_VALUE);
         System.out.println(Byte.MIN_VALUE);
