@@ -1,4 +1,4 @@
-package pl.pingwit.Homework_2;
+package pl.pingwit.homework_2;
 // преобразование строк
 public class Task_2 {
     public static void main(String[] args) {

@@ -1,4 +1,4 @@
-package pl.pingwit.Homework_2;
+package pl.pingwit.homework_2;
 // произведение двух чисел
 public class Task_4 {
     public static void main(String[] args) {

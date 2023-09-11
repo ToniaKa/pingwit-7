@@ -1,4 +1,4 @@
-package pl.pingwit.Homework_2;
+package pl.pingwit.homework_2;
 // сложение двух строк
 public class Task_6 {
     public static void main(String[] args) {
