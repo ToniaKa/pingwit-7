@@ -1,4 +1,5 @@
 package pl.pingwit.homework_2;
+
 // преобразование строк
 public class Task_2 {
     public static void main(String[] args) {
@@ -20,9 +21,6 @@ public class Task_2 {
         System.out.println(myParsedLong);
         System.out.println(myParsedFloat);
         System.out.println(myParsedDouble);
-
-
-
 
 
     }
