@@ -1,6 +1,6 @@
 package pl.pingwit.homework_3;
 
-public class Task_3 {
+public class ArithmeticProgression {
     //Вычислить: 1+2+4+8+...+256
     public static void main(String[] args) {
         int sum = 0;
