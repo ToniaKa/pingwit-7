@@ -1,6 +1,6 @@
 package pl.pingwit.homework_3;
 
-public class SumOfNambers {
+public class SumOfNumbers {
     /*  Даны числа от 0 до 100.
          - Посчитать сумму четных и вывести на экран
          - Посчитать сумму нечетных и вывести на экран
