@@ -15,7 +15,7 @@ public class СurrencyСonverter {
         System.out.println("Введите сумму:");
         int summa = scanner.nextInt();
 
-        int euroRate = EURO_RATE; //курс евро
+        int euroRate = EURO_RATE; //курс евро // эту переменную вводить не нужно. используй константу в строках 19 и 20
         int resultUah = euroRate * summa;
         int resultEuro = summa / euroRate;
         switch (currency) {
@@ -30,3 +30,6 @@ public class СurrencyСonverter {
         }
     }
 }
+//  В целом все хорошо и решение рабочее. Я хотел бы, чтобы ты сделала второй вариант решения, где использовала бы
+// не double, а BigDecimal Вычисления, касающиеся денег,
+// в реальном коде не проводят через double - давай плиз попрактикуемся

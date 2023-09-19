@@ -18,13 +18,16 @@ public class СarInsurance {
         System.out.println("Страховались у нас?");
         boolean regularCustomer = scanner.nextBoolean(); // постоянный клиент
 
-        double rate = RATE; // тариф
+        double rate = RATE; // тариф   // я бы даже не вводил эту переменную, а использовал бы в строке 24 константу
         double res_1 = carAccident ? CAR_ACCIDENT : 1.0;
         double res_2 = regularCustomer ? REGULAR_CUSTOMER : 1.0;
         double result = engine * rate * res_1 * res_2;
         System.out.println("Ваш полис стоит " + result + "евро");
     }
 }
+//  В целом все хорошо и решение рабочее. Я хотел бы, чтобы ты сделала второй вариант решения, где использовала бы
+// не double, а BigDecimal Вычисления, касающиеся денег,
+// в реальном коде не проводят через double - давай плиз попрактикуемся
 
 
 
