@@ -17,8 +17,9 @@ public class SumOfNumbersIfElse {
             }
             // подсчет общей суммы лучше сделать после цикла. делать его в цикле не имеет смысла, тк
             // нас интересует только результат после работы всего цикла
-            allSum = evenSum + oddSum;
         }
+        allSum = evenSum + oddSum;
+
         System.out.println(evenSum);
         System.out.println(oddSum);
         System.out.println(allSum);
