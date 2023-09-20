@@ -23,14 +23,13 @@ public class СarInsurance_bigDecimal {
         boolean regularCustomer = scanner.nextBoolean(); // постоянный клиент
 
         BigDecimal res_1 = new BigDecimal(carAccident ? CAR_ACCIDENT.toString() : "1.0");
+        //предлагаю упростить немного строку выше: BigDecimal accidentRate = carAccident ? CAR_ACCIDENT : new BigDecimal("1.0");
         BigDecimal res_2 = new BigDecimal(regularCustomer ? REGULAR_CUSTOMER.toString() : "1.0");
+        //предлагаю упростить немного строку выше: BigDecimal regularCustomerRate = regularCustomer ? REGULAR_CUSTOMER : new BigDecimal("1.0");
         BigDecimal result = engine.multiply(RATE.multiply(res_1).multiply(res_2).setScale(2, RoundingMode.CEILING));
         System.out.println("Ваш полис стоит " + result + "евро");
     }
 }
-//  В целом все хорошо и решение рабочее. Я хотел бы, чтобы ты сделала второй вариант решения, где использовала бы
-// не double, а BigDecimal Вычисления, касающиеся денег,
-// в реальном коде не проводят через double - давай плиз попрактикуемся
 
 
 

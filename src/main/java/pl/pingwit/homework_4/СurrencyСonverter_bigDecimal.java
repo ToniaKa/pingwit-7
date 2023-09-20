@@ -15,7 +15,7 @@ public class СurrencyСonverter_bigDecimal {
         System.out.println("Введите валюту: ");
         String currency = scanner.next(); //валюта
         System.out.println("Введите сумму:");
-        BigDecimal summa = new BigDecimal(scanner.next());
+        BigDecimal summa = new BigDecimal(scanner.next());  // опечатка в названии переменной: sum
 
 
         BigDecimal resultUah = new BigDecimal(EURO_RATE.multiply(summa).toString());
@@ -32,6 +32,3 @@ public class СurrencyСonverter_bigDecimal {
         }
     }
 }
-//  В целом все хорошо и решение рабочее. Я хотел бы, чтобы ты сделала второй вариант решения, где использовала бы
-// не double, а BigDecimal Вычисления, касающиеся денег,
-// в реальном коде не проводят через double - давай плиз попрактикуемся

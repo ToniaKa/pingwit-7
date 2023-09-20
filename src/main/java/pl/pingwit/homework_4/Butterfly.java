@@ -5,7 +5,7 @@ public class Butterfly {
     При запуске программы пользователя просят ввести размер бабочки и затем программа выводит результат на экран.*/
 
     public static void main(String[] args) {
-        int number = 9;
+        int number = 9;       // нужно проверить работу программы на разный данных: 5, 7, 8
         for (int i = 1; i <= number; i++) {
             // первый блок цифр
             for (int j = 1; j <= i; j++) {
