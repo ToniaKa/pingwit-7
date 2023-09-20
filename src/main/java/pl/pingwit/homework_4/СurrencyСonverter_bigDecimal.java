@@ -15,11 +15,11 @@ public class СurrencyСonverter_bigDecimal {
         System.out.println("Введите валюту: ");
         String currency = scanner.next(); //валюта
         System.out.println("Введите сумму:");
-        BigDecimal summa = new BigDecimal(scanner.next());  // опечатка в названии переменной: sum
+        BigDecimal sum = new BigDecimal(scanner.next());  // опечатка в названии переменной: sum
 
 
-        BigDecimal resultUah = new BigDecimal(EURO_RATE.multiply(summa).toString());
-        BigDecimal resultEuro = new BigDecimal(summa.divide(EURO_RATE, RoundingMode.HALF_EVEN).toString());
+        BigDecimal resultUah = new BigDecimal(EURO_RATE.multiply(sum).toString());
+        BigDecimal resultEuro = new BigDecimal(sum.divide(EURO_RATE, RoundingMode.HALF_EVEN).toString());
         switch (currency) {
             case "euro":
                 System.out.println("К выдаче " + resultUah + " гривен");
