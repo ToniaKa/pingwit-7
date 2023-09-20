@@ -1,11 +1,12 @@
 package pl.pingwit.homework_4;
 
+import java.math.BigDecimal;
+import java.math.RoundingMode;
 import java.util.Scanner;
 
-public class СurrencyСonverter {
+public class СurrencyСonverter_bigDecimal {
 
-    //  public static final int EURO_RATE = 40;
-    public static final int EURO_RATE = 40;
+    public static final BigDecimal EURO_RATE = new BigDecimal("40.2");
 
     /*   Написать программу-конвертер валют. (гривна <-> евро в обе стороны)
             Пользователь вводит валюту первым шагом, вторым вводит сумму, на выходе получает сумму в другой валюте.*/
@@ -14,10 +15,11 @@ public class СurrencyСonverter {
         System.out.println("Введите валюту: ");
         String currency = scanner.next(); //валюта
         System.out.println("Введите сумму:");
-        int summa = scanner.nextInt();
+        BigDecimal summa = new BigDecimal(scanner.next());
 
-        int resultUah = EURO_RATE * summa;
-        int resultEuro = summa / EURO_RATE;
+
+        BigDecimal resultUah = new BigDecimal(EURO_RATE.multiply(summa).toString());
+        BigDecimal resultEuro = new BigDecimal(summa.divide(EURO_RATE, RoundingMode.HALF_EVEN).toString());
         switch (currency) {
             case "euro":
                 System.out.println("К выдаче " + resultUah + " гривен");
