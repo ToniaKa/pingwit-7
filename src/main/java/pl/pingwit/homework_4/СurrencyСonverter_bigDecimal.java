@@ -17,7 +17,7 @@ public class СurrencyСonverter_bigDecimal {
         System.out.println("Введите сумму:");
         BigDecimal sum = new BigDecimal(scanner.next());  // опечатка в названии переменной: sum
 
-
+        // лишняя пустая строка
         BigDecimal resultUah = new BigDecimal(EURO_RATE.multiply(sum).toString());
         BigDecimal resultEuro = new BigDecimal(sum.divide(EURO_RATE, RoundingMode.HALF_EVEN).toString());
         switch (currency) {
