@@ -1,12 +1,8 @@
 package pl.pingwit.homework_4;
-
 import java.util.Scanner;
-
 public class СurrencyСonverter {
-
     //  public static final int EURO_RATE = 40;
     public static final int EURO_RATE = 40;
-
     /*   Написать программу-конвертер валют. (гривна <-> евро в обе стороны)
             Пользователь вводит валюту первым шагом, вторым вводит сумму, на выходе получает сумму в другой валюте.*/
     public static void main(String[] args) {
@@ -15,7 +11,6 @@ public class СurrencyСonverter {
         String currency = scanner.next(); //валюта
         System.out.println("Введите сумму:");
         int summa = scanner.nextInt();
-
         int resultUah = EURO_RATE * summa;
         int resultEuro = summa / EURO_RATE;
         switch (currency) {

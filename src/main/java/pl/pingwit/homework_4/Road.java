@@ -1,16 +1,12 @@
 package pl.pingwit.homework_4;
-
 import java.util.Scanner;
-
 public class Road {
     //При старте программы пользователя просят ввести время в пути в секундах.Затем, при помощи цикла while выводить на экран извилистую дорогу.
-
     public static void main(String[] args) {
         long start = System.currentTimeMillis();
         Scanner scanner = new Scanner(System.in);
         System.out.println("Введите время пути в секундах:");
         int time = scanner.nextInt();
-
 // лишняя пустая строка
         while (time > 1) {
             for (int i = 1; i < 10; i++) {
