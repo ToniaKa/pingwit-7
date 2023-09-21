@@ -1,13 +1,9 @@
 package pl.pingwit.homework_4;
-
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 import java.util.Scanner;
-
 public class СurrencyСonverter_bigDecimal {
-
     public static final BigDecimal EURO_RATE = new BigDecimal("40.2");
-
     /*   Написать программу-конвертер валют. (гривна <-> евро в обе стороны)
             Пользователь вводит валюту первым шагом, вторым вводит сумму, на выходе получает сумму в другой валюте.*/
     public static void main(String[] args) {
