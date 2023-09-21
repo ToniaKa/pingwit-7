@@ -47,12 +47,5 @@ public class Road {
 
 
 
-    /*for (int j = 10; j > 10 - i; j--) {
-            System.out.print("555");*/
 
-       /* while (zzz<10) {
-            System.out.println("|| | ||");
-            time++;
-        }*/
-//System.out.println("|| | ||");
 
