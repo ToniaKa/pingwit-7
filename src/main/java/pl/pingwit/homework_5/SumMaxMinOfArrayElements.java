@@ -13,6 +13,8 @@ public class SumMaxMinOfArrayElements {
         for (int i = 0; i < element; i++) {
             numbersArray[i] = scanner.nextInt();
         }
+        // Задача решена, зачет. Но я хотел бы видеть здесь решение без использования Arrays.stream()
+        // предлагаю переделать решение после занятия 6
         System.out.println(Arrays.stream(numbersArray).sum() + " сумма значений массива");
         System.out.println(Arrays.stream(numbersArray).max() + " наибольшее значение массива");
         System.out.println(Arrays.stream(numbersArray).min() + " наименьшее значение массива");
