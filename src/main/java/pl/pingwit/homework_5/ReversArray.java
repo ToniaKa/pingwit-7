@@ -1,7 +1,5 @@
 package pl.pingwit.homework_5;
-
 import java.util.Arrays;
-
 public class ReversArray {
     // Есть массив чисел, нужно инвертировать его порядок, т.е. массив [0,1,2,3,4] -> [4,3,2,1,0]
     public static void main(String[] args) {
@@ -11,10 +9,13 @@ public class ReversArray {
         int[] myArray = {10, 9, 8, 7, 6, 5, 4, 3, 2, 1, 0};  //    создала массив
         System.out.print(Arrays.toString(myArray)); // распечатала
         System.out.println();  //каретка на новой строке
-        for (int i = 0; i < myArray.length; i++) {
-            myArray[i] = myArray.length - 1 - i; //записала значения в массив по индексу
+
+        int [] new_myArray=new int[myArray.length];
+
+        for (int i = myArray.length-1; i >=0; i--) {
+            new_myArray[myArray.length-1-i] = myArray[i];
         }
-        System.out.print(Arrays.toString(myArray));
+        System.out.print(Arrays.toString(new_myArray));
     }
 }
 
