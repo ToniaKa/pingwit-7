@@ -1,5 +1,5 @@
 package pl.pingwit.homework_6;
-public class OwnerInformation {
+public class OwnerInformation {  // отформатируй плиз код в ДЗ 6
     // Фамилия, имя, телефон, email
     private String name;
     private String surname;
