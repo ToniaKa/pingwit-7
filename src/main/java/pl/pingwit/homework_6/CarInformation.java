@@ -9,7 +9,6 @@ public class CarInformation {
         CarNumber = carNumber;
     }
     public CarInformation() {
-
     }
     public CarInformation(String carNumber, OwnerInformation information) {
         CarNumber = carNumber;

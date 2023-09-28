@@ -1,13 +1,11 @@
 package pl.pingwit.homework_6;
 public class ParkingSystem {
     public static void main(String[] args) {
-
-        OwnerInformation ownerCar_1=new OwnerInformation("Ivan","Petrov","294567898","petrov_1@gmail.com");
-        OwnerInformation ownerCar_2=new OwnerInformation("Tonya","Kazlouskaya","295591528","toshechka_91@gmail.com");
-        OwnerInformation ownerCar_3=new OwnerInformation("Vladimir","Puzyrin","335214963","vlad@mail.ru");
-        OwnerInformation ownerCar_4=new OwnerInformation("Ekaterina","Rysina","442587936","ek-rys@mail.ru");
-        OwnerInformation ownerCar_5=new OwnerInformation("Egor","Andreev","295614879","andreev@inbox.ru");
-
+        OwnerInformation ownerCar_1 = new OwnerInformation("Ivan", "Petrov", "294567898", "petrov_1@gmail.com");
+        OwnerInformation ownerCar_2 = new OwnerInformation("Tonya", "Kazlouskaya", "295591528", "toshechka_91@gmail.com");
+        OwnerInformation ownerCar_3 = new OwnerInformation("Vladimir", "Puzyrin", "335214963", "vlad@mail.ru");
+        OwnerInformation ownerCar_4 = new OwnerInformation("Ekaterina", "Rysina", "442587936", "ek-rys@mail.ru");
+        OwnerInformation ownerCar_5 = new OwnerInformation("Egor", "Andreev", "295614879", "andreev@inbox.ru");
         CarInformation car_1 = new CarInformation();
         car_1.setCarNumber("1212PP-7");
         car_1.setInformation(ownerCar_1);
@@ -23,12 +21,9 @@ public class ParkingSystem {
         CarInformation car_5 = new CarInformation();
         car_5.setCarNumber("6312BB-2");
         car_5.setInformation(ownerCar_5);
-
-        String[] carArray={String.valueOf(car_1), String.valueOf(car_2), String.valueOf(car_3), String.valueOf(car_4),String.valueOf(car_5)};
-
+        String[] carArray = {String.valueOf(car_1), String.valueOf(car_2), String.valueOf(car_3), String.valueOf(car_4), String.valueOf(car_5)};
         for (String s : carArray) {
             System.out.println(s);
         }
-
     }
 }
