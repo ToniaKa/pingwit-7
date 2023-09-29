@@ -1,30 +1,35 @@
 package pl.pingwit.homework_6;
 public class CarInformation {
-    private String CarNumber;  // поля именуем с маленькой буквы: carNumber. right click -> refactor -> rename
-    private OwnerInformation Information; // см строку 3
+    private String carNumber;  // поля именуем с маленькой буквы: carNumber. right click -> refactor -> rename
+    private OwnerInformation information; // см строку 3
+
     public String getCarNumber() {
-        return CarNumber;
+        return carNumber;
     }
+
     public void setCarNumber(String carNumber) {
-        CarNumber = carNumber;
+        this.carNumber = carNumber;
     }
+
     public CarInformation() {
     }
     public CarInformation(String carNumber, OwnerInformation information) {
-        CarNumber = carNumber;
-        Information = information;
+        this.carNumber = carNumber;
+        this.information = information;
     }
     public OwnerInformation getInformation() {
-        return Information;
+        return information;
     }
+
     public void setInformation(OwnerInformation information) {
-        Information = information;
+        this.information = information;
     }
+
     @Override
     public String toString() {
         return "CarInformation{" +
-                "CarNumber='" + CarNumber + '\'' +
-                ", Information=" + Information +
+                "CarNumber='" + carNumber + '\'' +
+                ", Information=" + information +
                 '}';
     }
 }

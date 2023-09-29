@@ -9,11 +9,11 @@ public class ReversArray {
         int[] myArray = {10, 9, 8, 7, 6, 5, 4, 3, 2, 1, 0};  //    создала массив
         System.out.print(Arrays.toString(myArray)); // распечатала
         System.out.println();  //каретка на новой строке
-        int[] new_myArray = new int[myArray.length];  // в именовании переменных применяй camel case, _ не нужно. здесь подошло бы название типа reversedArray
+        int[] reversedArray = new int[myArray.length];  // в именовании переменных применяй camel case, _ не нужно. здесь подошло бы название типа reversedArray
         for (int i = myArray.length - 1; i >= 0; i--) {
-            new_myArray[myArray.length - 1 - i] = myArray[i];
+            reversedArray[myArray.length - 1 - i] = myArray[i];
         }
-        System.out.print(Arrays.toString(new_myArray));
+        System.out.print(Arrays.toString(reversedArray));
     }
 }
 
