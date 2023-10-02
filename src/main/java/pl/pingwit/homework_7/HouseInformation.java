@@ -11,9 +11,10 @@ public class HouseInformation {
         House[] houses = {house1, house2, house3, house4, house5};
         System.out.println(Arrays.toString(houses));
 
+        // три блока вынеси плиз в private static методы
         int sumTenants = 0;
         for (int i = 0; i < houses.length; i++) {
-            switch (houses[i].getType()) {
+            switch (houses[i].getType()) { // здесь только один case - в таких случаях принято использовать if(): он проще и в чтении и в написании.
                 case "Multi-storey building":
                     System.out.println(houses[i]);
                     for (int j = 0; j < houses[i].getTenants(); j++) {
@@ -24,14 +25,14 @@ public class HouseInformation {
         }
         System.out.println("Общее число жителей многоэтажных домов составляет:" + sumTenants);
         for (int i = 0; i < houses.length; i++) {
-            switch (houses[i].getType()) {
+            switch (houses[i].getType()) { // здесь только один case - в таких случаях принято использовать if(): он проще и в чтении и в написании.
                 case "Individual":
                     System.out.println(houses[i]);
             }
         }
         for (int i = 0; i < houses.length; i++) {
             switch (houses[i].getType()) {
-                case "Multi-storey building":
+                case "Multi-storey building":// здесь только один case - в таких случаях принято использовать if(): он проще и в чтении и в написании.
                     if (houses[i].getFloors() > 5) {
                         houses[i].setHeating(true);
                         System.out.println("Отопление включено: " + houses[i]);

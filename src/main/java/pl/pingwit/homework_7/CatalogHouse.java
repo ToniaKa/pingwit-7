@@ -1,6 +1,6 @@
 package pl.pingwit.homework_7;
 import java.util.Arrays;
-public class CatalogHouse {
+public class CatalogHouse {  // постарайся придерживаться правил английского языка, каталог домов в таком случае будет HouseCatalog
     private String city;
     private String area;
     private House[] housesList;

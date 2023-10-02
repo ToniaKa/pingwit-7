@@ -8,11 +8,11 @@ public class CarInformation {
         Car car5 = new Car("Kia", "Rio", 3);
 
         Car[] cars = {car1, car2, car3, car4, car5};
-        for (Car allCars : cars) {
+        for (Car allCars : cars) {  // переменную в данном случае надо называть в единственном числе. данный код можно будет прочитать так: "для каждого объекта типа Car car из массива cars сделай такие-то действия"
             System.out.println(allCars);
         }
         for (int i = 0; i < cars.length; i++) {
-            switch (cars[i].getBrand()) {
+            switch (cars[i].getBrand()) {  // здесь только один case - в таких случаях принято использовать if(): он проще и в чтении и в написании. Idea согласна со мной в этом плане;)
                 case "Audi":
                     System.out.println(cars[i]);
                     for (int j = 1; j <= cars[i].getNumberOfDoors(); j++) {

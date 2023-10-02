@@ -18,6 +18,9 @@ public class Person {  //task 1
         this.name = name;
         this.age = age;
     }
+
+    // добавь плиз в этот класс геттеры и сеттеры, хоть в твоей программе они и не вызываются
+    // во всем пакете homework_7 плиз сделай форматирование
     @Override
     public String toString() {
         return "Person{" +
