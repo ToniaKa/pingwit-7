@@ -13,7 +13,5 @@ public class CatalogHouseInformation {
 
         CatalogHouse catalogHouse = new CatalogHouse("Minsk", "Sovetski", housesList);
         System.out.println(catalogHouse);
-
     }
-
 }
