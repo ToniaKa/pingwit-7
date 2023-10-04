@@ -1,4 +1,5 @@
 package pl.pingwit.homework_7;
+
 public class House {
     private String type;
     private int floors;

@@ -1,8 +1,10 @@
 package pl.pingwit.homework_7;
+
 public class Car {
     private String brand;
     private String model;
-    private Integer numberOfDoors;{
+    private Integer numberOfDoors;
+    {
     }
     public Car(String brand, String model, Integer numberOfDoors) {
         this.brand = brand;

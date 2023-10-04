@@ -1,4 +1,5 @@
 package pl.pingwit.homework_7;
+
 public class PersonStaticText { //task 3
     public static void main(String[] args) {
         Person first = new Person("Egor", 45);

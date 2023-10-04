@@ -1,5 +1,7 @@
 package pl.pingwit.homework_7;
+
 import java.util.Arrays;
+
 public class CatalogHouseInformation {
     public static void main(String[] args) {
         House[] housesList = {
@@ -11,7 +13,7 @@ public class CatalogHouseInformation {
 
         System.out.println(Arrays.toString(housesList));
 
-        CatalogHouse catalogHouse = new CatalogHouse("Minsk", "Sovetski", housesList);
+        HouseCatalog catalogHouse = new HouseCatalog("Minsk", "Sovetski", housesList);
         System.out.println(catalogHouse);
     }
 }
