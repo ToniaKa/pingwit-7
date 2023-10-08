@@ -7,7 +7,9 @@ public class CashRegister {
     public static final BigDecimal PRICE_CAR_LESS_THAN_2_PEOPLE = new BigDecimal("10");
     public static final BigDecimal PRICE_CAR_MORE_THAN_2_PEOPLE = new BigDecimal("15");
 
-    public Vehicle[] countCash(Vehicle[] vehicles) {
+    public Vehicle[] countCash(Vehicle[] vehicles) {  // метод подсчитывает общую выручку парома и количесвтво пассажиров и распчатывает это все в консоль
+        // , значит он не должен возвращать  массив машин, а void
+        // массив cash в данном случае лишний, его нужно удалить
         Vehicle[] cash = {new Vehicle("1245NT-25", Type.CAR, 4, 1690),
                 new Vehicle("4785TR-3", Type.TRUCK, 2, 3500),
                 new Vehicle("3341MM-77", Type.TRUCK, 6, 3550),

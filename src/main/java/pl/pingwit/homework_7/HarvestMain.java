@@ -20,7 +20,8 @@ public class HarvestMain {
         System.out.println(Arrays.toString(harvests));
 
         HarvestStatisticsService statisticsServis = new HarvestStatisticsService();
-        statisticsServis.countHarvest(harvests);
+        statisticsServis.countHarvest(harvests); // результат этого вызова никуда не сохраняется и по сути не имеет смысла.
+        // здесь нужно сохранить результат вызова в переменную и использовать ее значение в строке 26: HarvestStatistic[] harvestStatistics = statisticsServis.countHarvest(harvests);
 
         System.out.println("Статистика урожая по каждой культуре: " + Arrays.toString(statisticsServis.countHarvest(harvests)));
     }

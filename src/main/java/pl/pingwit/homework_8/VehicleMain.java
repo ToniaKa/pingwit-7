@@ -15,7 +15,8 @@ public class VehicleMain {
         cashRegister.countCash(vehicles);
 
         FerryInspector ferryInspector = new FerryInspector();
-        ferryInspector.checkFerry(vehicles);
+        ferryInspector.checkFerry(vehicles); // метод вернет boolean, и потом на основании этого boolean значения
+        // выводи здесь в консоль сообщение о допуске либо недопуске парома к движению
     }
 }
 

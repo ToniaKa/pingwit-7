@@ -37,7 +37,6 @@ public class HouseInformation {
             if (house.getType().equals("Multi-storey building")) {// здесь только один case - в таких случаях принято использовать if(): он проще и в чтении и в написании.
                 if (house.getFloors() > 5) {
                     house.setHeating(true);
-
                     System.out.println("Отопление включено: " + house);
                 }
             }

@@ -4,8 +4,7 @@ public class Car {
     private String brand;
     private String model;
     private Integer numberOfDoors;
-    {
-    }
+
     public Car(String brand, String model, Integer numberOfDoors) {
         this.brand = brand;
         this.model = model;
