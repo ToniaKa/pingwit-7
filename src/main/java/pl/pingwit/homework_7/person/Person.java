@@ -1,4 +1,4 @@
-package pl.pingwit.homework_7;
+package pl.pingwit.homework_7.person;
 
 public class Person {  //task 1
     private String name;

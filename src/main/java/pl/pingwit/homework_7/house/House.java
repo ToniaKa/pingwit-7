@@ -1,4 +1,4 @@
-package pl.pingwit.homework_7;
+package pl.pingwit.homework_7.house;
 
 public class House {
     private String type;

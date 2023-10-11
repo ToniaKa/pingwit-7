@@ -1,4 +1,6 @@
-package pl.pingwit.homework_8;
+package pl.pingwit.homework_8.person;
+
+import java.util.Arrays;
 
 public class PersonMain {
     public static void main(String[] args) {
@@ -10,8 +12,8 @@ public class PersonMain {
 
         Person[] people = {person1, person2, person3, person4, person5};
 
-        ClientDataProcessor dataProcessor = new ClientDataProcessor();
-        dataProcessor.processor(people);
+       ClientDataProcessor dataProcessor = new ClientDataProcessor();
+       dataProcessor.process(people);
     }
 }
 

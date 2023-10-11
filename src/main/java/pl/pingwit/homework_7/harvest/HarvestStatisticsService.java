@@ -1,7 +1,6 @@
-package pl.pingwit.homework_7;
+package pl.pingwit.homework_7.harvest;
 
 import java.math.BigDecimal;
-import java.util.Arrays;
 
 public class HarvestStatisticsService {
     public HarvestStatistic[] countHarvest(Harvest[] harvests) {
@@ -19,9 +18,7 @@ public class HarvestStatisticsService {
                 case "Strawberry" -> sum[2].setTotalWeight(sum[2].getTotalWeight().add(harvest.getWeight()));
                 case "Potato" -> sum[3].setTotalWeight(sum[3].getTotalWeight().add(harvest.getWeight()));
             }
-
         }
-
         return sum;
     }
 }

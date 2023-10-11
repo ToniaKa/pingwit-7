@@ -1,4 +1,4 @@
-package pl.pingwit.homework_7;
+package pl.pingwit.homework_7.person;
 
 import java.util.Arrays;
 

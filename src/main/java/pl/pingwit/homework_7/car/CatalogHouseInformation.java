@@ -1,4 +1,7 @@
-package pl.pingwit.homework_7;
+package pl.pingwit.homework_7.car;
+
+import pl.pingwit.homework_7.house.House;
+import pl.pingwit.homework_7.house.HouseCatalog;
 
 import java.util.Arrays;
 

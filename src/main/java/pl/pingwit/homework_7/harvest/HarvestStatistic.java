@@ -1,4 +1,4 @@
-package pl.pingwit.homework_7;
+package pl.pingwit.homework_7.harvest;
 
 import java.math.BigDecimal;
 

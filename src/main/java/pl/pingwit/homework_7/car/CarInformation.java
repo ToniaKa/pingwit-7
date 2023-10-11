@@ -1,4 +1,4 @@
-package pl.pingwit.homework_7;
+package pl.pingwit.homework_7.car;
 
 public class CarInformation {
     public static void main(String[] args) {

@@ -1,4 +1,4 @@
-package pl.pingwit.homework_7;
+package pl.pingwit.homework_7.house;
 
 public class HouseStatisticsCalculator {
     public int countMultyBilding(House[] differentHouses) {

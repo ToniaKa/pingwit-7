@@ -1,4 +1,4 @@
-package pl.pingwit.homework_7;
+package pl.pingwit.homework_7.harvest;
 
 import java.math.BigDecimal;
 import java.util.Arrays;
@@ -8,7 +8,7 @@ public class HarvestMain {
     public static void main(String[] args) {
 
         Harvest harvest1 = new Harvest(14528478L, "Zareche", "Rye", new BigDecimal("1458.48"));
-        Harvest harvest2 = new Harvest(14545478L, "Ushod", "Wheat", new BigDecimal("4587.74"));
+        Harvest harvest2 = new Harvest(14545438L, "Ushod", "Wheat", new BigDecimal("4587.74"));
         Harvest harvest3 = new Harvest(18577478L, "Negoreloe", "Strawberry", new BigDecimal("4578.25"));
         Harvest harvest4 = new Harvest(18545478L, "Zarechee", "Potato", new BigDecimal("12458.01"));
         Harvest harvest5 = new Harvest(18545478L, "Zareche", "Rye", new BigDecimal("34234.01"));
@@ -20,10 +20,10 @@ public class HarvestMain {
         System.out.println(Arrays.toString(harvests));
 
         HarvestStatisticsService statisticsServis = new HarvestStatisticsService();
-        statisticsServis.countHarvest(harvests); // результат этого вызова никуда не сохраняется и по сути не имеет смысла.
+        HarvestStatistic[] harvestStatistics= statisticsServis.countHarvest(harvests); // результат этого вызова никуда не сохраняется и по сути не имеет смысла.
         // здесь нужно сохранить результат вызова в переменную и использовать ее значение в строке 26: HarvestStatistic[] harvestStatistics = statisticsServis.countHarvest(harvests);
 
-        System.out.println("Статистика урожая по каждой культуре: " + Arrays.toString(statisticsServis.countHarvest(harvests)));
+        System.out.println("Статистика урожая по каждой культуре: " + Arrays.toString(harvestStatistics));
     }
 
 }
