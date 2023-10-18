@@ -1,8 +1,5 @@
 package pl.pingwit.homework_10.User;
 
-import pl.pingwit.homework_10.User.CheckUser;
-import pl.pingwit.homework_10.User.UserData;
-
 import java.util.Scanner;
 
 public class UserMain {
@@ -30,10 +27,8 @@ public class UserMain {
         UserData person = new UserData(userName, name, surname, email, phone, password);
         System.out.println(person);
 
-        CheckUser persona = new CheckUser();  // переменной подошло бы имя userValidator
-        boolean checkPerson = persona.isCheckPerson(person);
+        UserValidator userValidator = new UserValidator();  // переменной подошло бы имя userValidator
+        boolean checkPerson = userValidator.isVallid(person);
         System.out.println(checkPerson);
-
-
     }
 }
