@@ -30,7 +30,7 @@ public class UserMain {
         UserData person = new UserData(userName, name, surname, email, phone, password);
         System.out.println(person);
 
-        CheckUser persona = new CheckUser();
+        CheckUser persona = new CheckUser();  // переменной подошло бы имя userValidator
         boolean checkPerson = persona.isCheckPerson(person);
         System.out.println(checkPerson);
 
