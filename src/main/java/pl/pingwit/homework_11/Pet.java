@@ -25,9 +25,10 @@ public class Pet {
         return owner;
     }
 
-    public final String toInformation() {
+    public final String toInformation() { // не хватает лишь одной маленькой детали - нужно запретить классам-наследникам переопределять этот метод
 
-        return String.format("Питомец %s принадлежит %s %s.Контакты хозяина:%s,%s", name, owner.getName(), owner.getSurname(), owner.getPhoneNumber(), owner.getEmail());
+        return String.format("Питомец %s принадлежит %s %s.Контакты хозяина:%s,%s", name, owner.getName(),
+                owner.getSurname(), owner.getPhoneNumber(), owner.getEmail());
     }
 
     @Override
