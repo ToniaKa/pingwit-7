@@ -1,4 +1,6 @@
-package pl.pingwit.homework_11;
+package pl.pingwit.homework_11.veterinaryClinic;
+
+import pl.pingwit.homework_11.veterinaryClinic.*;
 
 import java.math.BigDecimal;
 
