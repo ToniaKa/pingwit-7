@@ -3,7 +3,7 @@ package pl.pingwit.homework_11.taromat;
 import java.math.BigDecimal;
 import java.util.Objects;
 
-public class Reciept {
+public class Reciept { // Receipt
     private String message;
     private BigDecimal amount;
 

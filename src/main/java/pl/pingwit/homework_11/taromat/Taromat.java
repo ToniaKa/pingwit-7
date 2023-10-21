@@ -8,21 +8,19 @@ public class Taromat {
     public static final BigDecimal GLASS_PRICE = new BigDecimal("0.15");
     public static final BigDecimal ALUMINUM_PRICE = new BigDecimal("0.15");
 
-    public BigDecimal tareCalculator(Tare[] tares) {
+    public BigDecimal tareCalculator(Tare[] tares) { // нужно изменить тип возвращаемого значения на Reciept
         BigDecimal costPlastic;
         BigDecimal costGlass;
         BigDecimal costAluminum;
-        BigDecimal amount;
+        BigDecimal amount; // эту переменную лучше объявить в строке 36: BigDecimal amount = costPlastic.add(costGlass).add(costAluminum);
 
         int quantityPlastic = 0;
         int quantityGlass = 0;
         int quantityAluminum = 0;
 
         for (Tare tare : tares) {
-
             if (tare.getMaterial().equals(Material.PLASTIC)) {
                 quantityPlastic++;
-
             }
             if (tare.getMaterial().equals(Material.GLASS)) {
                 quantityGlass++;
@@ -37,8 +35,12 @@ public class Taromat {
 
         amount = costPlastic.add(costGlass).add(costAluminum);
 
+        // здесь не нужно выводить это сообщение в консоль. Нужно просто "собрать" строку
+        String message = String.format("Вы сдали %d пластиковых бутылок, %d стеклянных бутылок, %d алюминиевых банок.Сумма: ", quantityPlastic, quantityGlass, quantityAluminum);
+        // потом нужно создать объект чека и вернуть его:
+        // return new Reciept(message, amount);
+        // строки 43 и 44 становятся не нужны тогда
         System.out.printf("Вы сдали %d пластиковых бутылок, %d стеклянных бутылок, %d алюминиевых банок.Сумма: ", quantityPlastic, quantityGlass, quantityAluminum);
-
         return amount;
 
     }
