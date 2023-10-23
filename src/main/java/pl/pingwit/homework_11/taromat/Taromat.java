@@ -8,7 +8,9 @@ public class Taromat {
     public static final BigDecimal GLASS_PRICE = new BigDecimal("0.15");
     public static final BigDecimal ALUMINUM_PRICE = new BigDecimal("0.15");
 
+    // методам лучше давать глагольные имена. в данном случае таромат принимает тару: acceptTare, calculateReceipt...
     public Reciept tareCalculator(Tare[] tares) { // нужно изменить тип возвращаемого значения на Reciept
+        // эти поля лучше объявить там, где они используются - в строках 39, 40, 41 соответственно
         BigDecimal costPlastic;
         BigDecimal costGlass;
         BigDecimal costAluminum;
@@ -18,6 +20,12 @@ public class Taromat {
         int quantityAluminum = 0;
 
         for (Tare tare : tares) {
+            // здесь бы и обновленный Switch красиво смотрелся бы
+            /*switch (tare.getMaterial()) {
+                case ALUMINUM -> quantityAluminum++;
+                case GLASS -> quantityGlass++;
+                case PLASTIC -> quantityPlastic++;
+            }*/
             if (tare.getMaterial().equals(Material.PLASTIC)) {
                 quantityPlastic++;
             }
