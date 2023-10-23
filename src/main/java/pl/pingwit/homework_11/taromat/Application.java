@@ -15,8 +15,8 @@ public class Application {
         Tare[] tares = {tare1, tare2, tare3, tare4, tare5, tare6};
 
         Taromat taromat = new Taromat();
-        BigDecimal reciept = taromat.tareCalculator(tares);
-        System.out.println(reciept);
+
+        System.out.println(taromat.tareCalculator(tares));
     }
 }
 
