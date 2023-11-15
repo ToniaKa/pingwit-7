@@ -2,7 +2,7 @@ package pl.pingwit.homework_12.person;
 
 import java.util.Objects;
 
-public class Person {
+public class Person { // хороший кандидат на record!
     private String name;
     private String surname;
 
