@@ -16,7 +16,8 @@ public class Router {
         this.gameConsole = gameConsole;
     }
 
-    public String connectWiFi(String deviceName) throws IOException {
+    public String connectWiFi(String deviceName) throws IOException { // deviceName передается в метод, но не используется.
+        // его нужно использовать в строке 24 вместо gameConsole
         if (RandomUtils.nextBoolean()) {
             throw new IOException("Ошибка подключения, попробуйте повторить попытку чуть позже!");
         }
