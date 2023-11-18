@@ -8,12 +8,12 @@ public class Router {
     private String name;
     private String networkName;
 
-    private final GameConsole gameConsole;
+    private GameConsole gameConsole;
 
-    public Router(String name, String networkName, GameConsole gameConsole) {
+    public Router(String name, String networkName) {
         this.name = name;
         this.networkName = networkName;
-        this.gameConsole = gameConsole;
+
     }
 
     public String connectWiFi(String deviceName) throws IOException { // deviceName передается в метод, но не используется.
@@ -21,6 +21,6 @@ public class Router {
         if (RandomUtils.nextBoolean()) {
             throw new IOException("Ошибка подключения, попробуйте повторить попытку чуть позже!");
         }
-        return "Устройство " + gameConsole + " подключено к сети " + networkName;
+        return "Устройство " + deviceName + " подключено к сети " + networkName;
     }
 }

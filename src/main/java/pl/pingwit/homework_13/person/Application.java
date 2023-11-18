@@ -3,22 +3,20 @@ package pl.pingwit.homework_13.person;
 import java.util.Arrays;
 
 public class Application {
-    private static final String text ="Fedor, Petrov, 7, 1980-25-02; Peter, Parker, 4, 1970-01-01; Inna, Filatova, 6, 1994-02-10";
-    private static final String text2 = "Fedor, Petrov, 7, 1980-25-02; Maks, Ermolaev, 12, 1987-02-03; Peter, Parker, 4, 1970-01-01; Inna, Filatova, 6, 1994-02-10";
     public static void main(String[] args) {
+        String person = "Fedor, Petrov, 7, 1980-25-02; Peter, Parker, 4, 1970-01-01; Inna, Filatova, 6, 1994-02-10; " + "Tonya, Kazlovskaya, 5, 1991-14-04";
 
-        PersonParser person=new PersonParser();
-        PersonParser newPerson=new PersonParser();
+        String exceptionPerson = "Fedor, Petrov, 7, 1980-25-02; Maks, Ermolaev, 12, 1987-02-03; Peter, Parker, 4, 1970-01-01; Inna, Filatova, 6, 1994-02-10";
 
-        System.out.println(Arrays.toString(person.personParser(text)));
-        System.out.println(Arrays.toString(newPerson.personParser(text2)));
+        PersonParser newPerson = new PersonParser();
+        PersonParser anyPerson = new PersonParser();
 
+        Person[] people = anyPerson.personParsing(exceptionPerson);
+        Person[] persons = newPerson.personParsing(person);
 
-
-
-
-
-
-
+        Person[][] arrayPeople = {people, persons};
+        for (Person[] objectsPeople : arrayPeople) {
+            System.out.println(Arrays.toString(objectsPeople));
+        }
     }
 }

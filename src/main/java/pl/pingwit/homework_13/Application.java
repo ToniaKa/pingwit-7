@@ -22,10 +22,6 @@ public class Application {
         String parseDateFormatter2 = parseDate.format(dateTimeFormatter1);
         String parseDateFormatter3 = parseDate.format(dateTimeFormatter2);
         String parseDateFormatter4 = parseDate.format(dateTimeFormatter3);
-        System.out.println(parseDateFormatter1);
-        System.out.println(parseDateFormatter2);
-        System.out.println(parseDateFormatter3);
-        System.out.println(parseDateFormatter4);
 
         DateTimeFormatter pattern1 = DateTimeFormatter.ofPattern("dd-yyyy-MM");
         LocalDate parseDate2 = LocalDate.parse(date1, pattern1);
@@ -33,10 +29,6 @@ public class Application {
         String parseDateFormatter6 = parseDate2.format(dateTimeFormatter1);
         String parseDateFormatter7 = parseDate2.format(dateTimeFormatter2);
         String parseDateFormatter8 = parseDate2.format(dateTimeFormatter3);
-        System.out.println(parseDateFormatter5);
-        System.out.println(parseDateFormatter6);
-        System.out.println(parseDateFormatter7);
-        System.out.println(parseDateFormatter8);
 
         DateTimeFormatter pattern2 = DateTimeFormatter.ofPattern("dd-MM-yyyy");
         LocalDate parseDate3 = LocalDate.parse(date2, pattern2);
@@ -44,11 +36,12 @@ public class Application {
         String parseDateFormatter10 = parseDate3.format(dateTimeFormatter1);
         String parseDateFormatter11 = parseDate3.format(dateTimeFormatter2);
         String parseDateFormatter12 = parseDate3.format(dateTimeFormatter3);
-        System.out.println(parseDateFormatter9);
-        System.out.println(parseDateFormatter10);
-        System.out.println(parseDateFormatter11);
-        System.out.println(parseDateFormatter12);
 
+        String[] dates = {parseDateFormatter1, parseDateFormatter2, parseDateFormatter3, parseDateFormatter4, parseDateFormatter5,
+                parseDateFormatter6, parseDateFormatter7, parseDateFormatter8, parseDateFormatter9, parseDateFormatter10, parseDateFormatter11, parseDateFormatter12};
+        for (String stringDates : dates) {
+            System.out.println(stringDates);
+        }
         DateTimeFormatter newPattern = DateTimeFormatter.ofPattern("HH/mm/a/EEEE : yyyy-dd-MMMM-G").localizedBy(Locale.ENGLISH);
         LocalDateTime localDateTime = LocalDateTime.now();
         System.out.println(newPattern.format(localDateTime));

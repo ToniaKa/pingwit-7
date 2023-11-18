@@ -6,30 +6,33 @@ import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 
 public class PersonParser {
-    public Person[] personParser(String text) {
-        String[] item = text.split(";");
-        Person[] splitOfPerson = new Person[item.length];
-        for (int i = 0; i < item.length; i++) {
-            splitOfPerson[i] = itemParser(item[i]);
+
+    public Person[] personParsing(String stringOfPersons) {
+        String[] personsObject = stringOfPersons.split(";");
+        Person[] people = new Person[personsObject.length];
+
+        String name = null;
+        String surname = null;
+        LocalDate datefBirthDay = null;
+
+        for (int i = 0; i < personsObject.length; i++) {
+            DayOfWeek day = null;
+            String[] varPerson = personsObject[i].split(",");
+            for (int j = 0; j < varPerson.length; j++) {
+                try {
+                    switch (j) {
+                        case 0 -> name = varPerson[j].trim();
+                        case 1 -> surname = varPerson[j].trim();
+                        case 2 -> day = DayOfWeek.of((Integer.parseInt(varPerson[j].trim())));
+                        case 3 ->
+                                datefBirthDay = LocalDate.parse(varPerson[j].trim(), DateTimeFormatter.ofPattern("yyyy-dd-MM"));
+                    }
+                } catch (DateTimeException e) {
+                    System.out.println("Ошибка :" + varPerson[i] + " " + e.getMessage());
+                }
+                people[i] = new Person(name, surname, day, datefBirthDay);
+            }
         }
-        return splitOfPerson;
-    }
-
-    private Person itemParser(String text) {
-
-        String[] strings = text.split(",");
-        String name = strings[0].trim();
-        String surname = strings[1].trim();
-
-        DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern("yyyy-dd-MM");
-        LocalDate dayOfBirth = LocalDate.parse(strings[3].trim(), dateTimeFormatter);
-        DayOfWeek dayOfWeek=null;
-
-       try {
-            dayOfWeek = DayOfWeek.of(Integer.parseInt(strings[2].trim()));
-       }catch (DateTimeException e){
-           System.out.println(e.getMessage());
-       }
-        return new Person (name,surname,dayOfBirth,dayOfWeek);
+        return people;
     }
 }

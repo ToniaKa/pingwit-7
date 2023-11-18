@@ -2,19 +2,18 @@ package pl.pingwit.homework_13.person;
 
 import java.time.DayOfWeek;
 import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
 
 public class Person {
     private String name;
     private String surname;
-    private LocalDate dateOfBirth;
-    private DayOfWeek dayOfWeek;
+    private DayOfWeek day;
+    private LocalDate dateOfBirthDay;
 
-    public Person(String name, String surname, LocalDate dateOfBirth, DayOfWeek dayOfWeek) {
+    public Person(String name, String surname, DayOfWeek day, LocalDate datefBirthDay) {
         this.name = name;
         this.surname = surname;
-        this.dateOfBirth = dateOfBirth;
-        this.dayOfWeek = dayOfWeek;
+        this.day = day;
+        this.dateOfBirthDay = datefBirthDay;
     }
 
     public String getName() {
@@ -33,20 +32,20 @@ public class Person {
         this.surname = surname;
     }
 
-    public LocalDate getDateOfBirth() {
-        return dateOfBirth;
+    public DayOfWeek getDay() {
+        return day;
     }
 
-    public void setDateOfBirth(LocalDate dateOfBirth) {
-        this.dateOfBirth = dateOfBirth;
+    public void setDay(DayOfWeek day) {
+        this.day = day;
     }
 
-    public DayOfWeek getDayOfWeek() {
-        return dayOfWeek;
+    public LocalDate getDateOfBirthDay() {
+        return dateOfBirthDay;
     }
 
-    public void setDayOfWeek(DayOfWeek dayOfWeek) {
-        this.dayOfWeek = dayOfWeek;
+    public void setDateOfBirthDay(LocalDate dateOfBirthDay) {
+        this.dateOfBirthDay = dateOfBirthDay;
     }
 
     @Override
@@ -54,8 +53,8 @@ public class Person {
         return "Person{" +
                 "name='" + name + '\'' +
                 ", surname='" + surname + '\'' +
-                ", dateOfBirth=" + dateOfBirth +
-                ", dayOfWeek=" + dayOfWeek +
+                ", day=" + day +
+                ", datefBirthDay=" + dateOfBirthDay +
                 '}';
     }
 }
