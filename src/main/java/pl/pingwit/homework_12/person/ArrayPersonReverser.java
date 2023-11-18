@@ -8,6 +8,7 @@ public class ArrayPersonReverser implements PersonReverser {
 
         // сейчас результат работы не совсем ожидаемый: Person{name='[я, н, о, Т]', surname='[я, а, к, с, в, о, л, з, а, К]'}
         // я в комментах добавил альтернативное решение
+
         StringBuilder newName = new StringBuilder();
         for (int i = charName.length - 1; i >= 0; i--) {
             newName.append(charName[i]);
