@@ -8,14 +8,18 @@ import java.time.format.DateTimeFormatter;
 public class PersonParser {
 
     public Person[] personParsing(String stringOfPersons) {
-        String[] personsObject = stringOfPersons.split(";");
+        String[] personsObject = stringOfPersons.split(";"); // название можно улучшить, personStrings лучше отобразит суть
         Person[] people = new Person[personsObject.length];
 
-        String name = null;
-        String surname = null;
-        LocalDate datefBirthDay = null;
+        // эти переменные лучше объявить внутри цикла. их значение меняется с каждой итерацией, поэтому нет смысла их помечать снаружи
+        //String name = null;
+        //String surname = null;
+        //LocalDate datefBirthDay = null;
 
         for (int i = 0; i < personsObject.length; i++) {
+            String name = null;
+            String surname = null;
+            LocalDate datefBirthDay = null;
             DayOfWeek day = null;
             String[] varPerson = personsObject[i].split(",");
             for (int j = 0; j < varPerson.length; j++) {
