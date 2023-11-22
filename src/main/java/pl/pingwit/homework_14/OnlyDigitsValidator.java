@@ -1,4 +1,4 @@
-package pl.pingwit.homework_16;
+package pl.pingwit.homework_14;
 
 import java.lang.annotation.Annotation;
 import java.lang.reflect.Field;
@@ -11,11 +11,11 @@ public class OnlyDigitsValidator {
         Class<?> clazz = obj.getClass();
         for (Field declaredField : clazz.getDeclaredFields()) {
             for (Annotation annotation : declaredField.getAnnotations()) {
-                if(annotation.annotationType().equals(OnlyDigits.class)&& declaredField.getType().equals(String.class)){
+                if (annotation.annotationType().equals(OnlyDigits.class) && declaredField.getType().equals(String.class)) {
                     declaredField.setAccessible(true);
-                    String value=(String) declaredField.get(obj);
-                    if (!PHONE_DIGIT_ONLY.matcher(value).matches()){
-                        String message1=String.format("Поле %s не валидно", declaredField.getName());
+                    String value = (String) declaredField.get(obj);
+                    if (!PHONE_DIGIT_ONLY.matcher(value).matches()) {
+                        String message1 = String.format("Поле %s не валидно", declaredField.getName());
                         throw new PingwitException(message1);
                     }
                 }
