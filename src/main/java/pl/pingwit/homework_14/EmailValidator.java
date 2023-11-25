@@ -15,6 +15,7 @@ public class EmailValidator {
                     declaredField.setAccessible(true);
                     String value = (String) declaredField.get(obj);
                     if (!EMAIL_PATTERN.matcher(value).matches()) {
+                        // сообщение можно дополнить информацией о том, что именно не валидно.
                         String message = String.format("Поле %s не валидно", declaredField.getName());
                         throw new PingwitException(message);
                     }

@@ -8,11 +8,12 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 class DefaultValueProcessorTest {
 
-    DefaultValueProcessor defaultValueProcessor=new DefaultValueProcessor();
+    DefaultValueProcessor defaultValueProcessor = new DefaultValueProcessor();
 
     @Test
     void shouldSetDefaultValue_whenStringNull() throws IllegalAccessException {
         CustomerDetails customerDetailsWithStringNull = new CustomerDetails(null, null, null, null, LocalDate.now(), 7);
+        // достаточно expected
         CustomerDetails expectedString = new CustomerDetails("defaultValue", "defaultValue", "defaultValue", "defaultValue", LocalDate.now(), 7);
 
         defaultValueProcessor.process(customerDetailsWithStringNull);
