@@ -1,6 +1,7 @@
 package pl.pingwit.homework_16;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import org.apache.commons.lang3.StringUtils;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -27,7 +28,8 @@ public class Task3 {
                 System.out.println(obj);
             }
 
-        } catch (IOException | NullPointerException e) {
+        } catch (IOException e) { // NPE не нужно ловить. нужно создавать условия, чтобы она не вылетала
+            // в методе parseJsonResponse можно возвращать пустой массив, если на вход пришла пуста строка либо null
             throw new PingwitException("Извините вы ввели несуществующий город, попробуйте еще раз!");
         }
     }
@@ -56,9 +58,12 @@ public class Task3 {
 
     private static ATM[] parseJsonResponse(String jsonResponse) throws IOException {
         // допишите метод
-        ObjectMapper objectMapper = new ObjectMapper();
-        ATM[] atm = objectMapper.readValue(jsonResponse, ATM[].class);
-        return atm;
+        //"", null -> пустой массив
+        if (StringUtils.isNotBlank(jsonResponse) && !jsonResponse.equals("null")) {
+            ObjectMapper objectMapper = new ObjectMapper();
+            return objectMapper.readValue(jsonResponse, ATM[].class);
+        }
+        return new ATM[]{};
     }
 }
 

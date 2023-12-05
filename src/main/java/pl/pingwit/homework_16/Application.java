@@ -27,6 +27,8 @@ public class Application {
             e.printStackTrace();
         }
 
+        // в этом файле нужно отформатировать код.
+        // также, вынесли плиз работу с АТМ в отделный класс
         ObjectMapper objectMapper=new ObjectMapper();
         ATM[] atm=objectMapper.readValue(new File("src/main/java/pl/pingwit/homework_16/atms.json"),ATM[].class);
             System.out.println(Arrays.toString(atm));
