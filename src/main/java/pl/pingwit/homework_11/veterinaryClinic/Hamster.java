@@ -43,7 +43,9 @@ public class Hamster extends Pet {
         return "Hamster{" +
                 "cheekVolume=" + cheekVolume +
                 ", pawLength=" + pawLength +
+                ", owner=" + owner +
                 '}';
     }
 }
+
 

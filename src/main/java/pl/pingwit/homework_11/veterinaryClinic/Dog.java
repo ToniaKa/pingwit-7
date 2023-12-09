@@ -44,6 +44,7 @@ public class Dog extends Pet {
         return "Dog{" +
                 "taillength=" + taillength +
                 ", weight=" + weight +
+                ", owner=" + owner +
                 '}';
     }
 }

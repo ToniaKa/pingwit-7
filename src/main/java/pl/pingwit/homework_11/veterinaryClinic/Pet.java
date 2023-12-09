@@ -5,7 +5,7 @@ import java.util.Objects;
 public class Pet {
     private final Long id;
     private final String name;
-    private final Owner owner;
+    protected final Owner owner;
 
     public Pet(Long id, String name, Owner owner) {
         this.id = id;
@@ -27,8 +27,8 @@ public class Pet {
 
     public final String toInformation() { // не хватает лишь одной маленькой детали - нужно запретить классам-наследникам переопределять этот метод
 
-        return String.format("Питомец %s принадлежит %s %s.Контакты хозяина:%s,%s", name, owner.getName(),
-                owner.getSurname(), owner.getPhoneNumber(), owner.getEmail());
+        return String.format("Питомец %s принадлежит %s %s.Контакты хозяина:%s,%s", name, owner.name(),
+                owner.surname(), owner.phoneNumber(), owner.email());
     }
 
     @Override

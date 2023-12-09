@@ -43,7 +43,9 @@ public class Parrot extends Pet {
         return "Parrot{" +
                 "color='" + color + '\'' +
                 ", beakLength=" + beakLength +
+                ", owner=" + owner +
                 '}';
     }
 }
+
 

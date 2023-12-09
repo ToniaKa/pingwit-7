@@ -43,9 +43,11 @@ public class Cat extends Pet {
         return "Cat{" +
                 "breed='" + breed + '\'' +
                 ", temperature=" + temperature +
+                ", owner=" + owner +
                 '}';
     }
 }
+
 
 
 
