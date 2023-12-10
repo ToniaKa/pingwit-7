@@ -45,12 +45,14 @@ public class ListDeleteBenchmark {
         System.out.println("LinkedList - Remove in Beginner: " + (endTime - startTime) + " milliseconds");
     }
 
+    // рекомендация по неймингу: deleteFromBeginning
     private static void deleteInBeginner(List<Integer> list) {
         for (int i = 0; i < list.size(); i++) {
             list.remove(i);
         }
     }
 
+    // рекомендация по неймингу: deleteFromMiddle
     private static void deleteInMiddle(List<Integer> list) {
         for (int i = list.size() / 2; i <= list.size(); i++) {
             list.remove(i);
