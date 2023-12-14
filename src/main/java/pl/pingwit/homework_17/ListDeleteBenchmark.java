@@ -14,14 +14,14 @@ public class ListDeleteBenchmark {
         List<Integer> arrayList = new ArrayList<>();
         fillList(arrayList, 100000);
         long startTime = System.currentTimeMillis();
-        deleteInMiddle(arrayList);
+        deleteFromMiddle(arrayList);
         long endTime = System.currentTimeMillis();
         System.out.println("ArrayList - Remove in Middle: " + (endTime - startTime) + " milliseconds");
 
         List<Integer> linkedList = new LinkedList<>();
         fillList(linkedList, 100000);
         startTime = System.currentTimeMillis();
-        deleteInMiddle(linkedList);
+        deleteFromMiddle(linkedList);
         endTime = System.currentTimeMillis();
         System.out.println("LinkedList - Remove in Middle: " + (endTime - startTime) + " milliseconds");
 
@@ -30,30 +30,30 @@ public class ListDeleteBenchmark {
         Нужно написать бенчмарк, который бы показал скорость удаления из НАЧАЛА у двух этих листов
         Удалить нужно все элементы*/
 
-        List<Integer> arrayList2 = new LinkedList<>();
+        List<Integer> arrayList2 = new ArrayList<>();
         fillList(arrayList2, 100000);
         startTime = System.currentTimeMillis();
-        deleteInBeginner(arrayList2);
+        deleteIFromBeginner(arrayList2);
         endTime = System.currentTimeMillis();
         System.out.println("ArrayList - Remove in Beginner: " + (endTime - startTime) + " milliseconds");
 
         List<Integer> linkedList2 = new LinkedList<>();
         fillList(linkedList2, 100000);
         startTime = System.currentTimeMillis();
-        deleteInBeginner(linkedList2);
+        deleteIFromBeginner(linkedList2);
         endTime = System.currentTimeMillis();
         System.out.println("LinkedList - Remove in Beginner: " + (endTime - startTime) + " milliseconds");
     }
 
     // рекомендация по неймингу: deleteFromBeginning
-    private static void deleteInBeginner(List<Integer> list) {
+    private static void deleteIFromBeginner(List<Integer> list) {
         for (int i = 0; i < list.size(); i++) {
             list.remove(i);
         }
     }
 
     // рекомендация по неймингу: deleteFromMiddle
-    private static void deleteInMiddle(List<Integer> list) {
+    private static void deleteFromMiddle(List<Integer> list) {
         for (int i = list.size() / 2; i <= list.size(); i++) {
             list.remove(i);
         }
