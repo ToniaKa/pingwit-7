@@ -30,6 +30,8 @@ public class RemoveDuplicateValue {
                 }
             }
         }
+
+        // альтернативное решение: collection1.removeAll(collection2);
         System.out.println(names);
     }
 }
