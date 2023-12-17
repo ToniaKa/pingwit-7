@@ -2,8 +2,8 @@ package pl.pingwit.homework_18;
 
 import java.util.Objects;
 
-public class FootballClass {
-    private String title;
+public class FootballClass { // может быть, FootballClub больше подойдет?
+    private String title; // нет причин не сделать поля final
     private String country;
     private String city;
 

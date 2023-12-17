@@ -41,7 +41,7 @@ public class VisitDataApplication {
         System.out.println(visitsByUser);
     }
 
-    public static Set<String> findUniqueName(List<VisitData> webList) {
+    public static Set<String> findUniqueName(List<VisitData> webList) { // findUniqueNames подошло бы еще лучше
         SortedSet<String> result = new TreeSet<>();
         for (VisitData web : webList) {
             String name = web.getName();

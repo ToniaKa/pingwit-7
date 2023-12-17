@@ -3,7 +3,7 @@ package pl.pingwit.homework_18;
 import java.util.Objects;
 
 public class VisitData {
-    private String name;
+    private String name;// нет причин не сделать поля final
     private String site;
 
     public VisitData(String name, String site) {

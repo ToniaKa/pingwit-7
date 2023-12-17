@@ -29,9 +29,9 @@ public class FootballApplication {
     }
 
     public static Set<String> findCountry(List<FootballClass> footballClassList) {
-        Set<String> country = new HashSet<>();
+        Set<String> country = new HashSet<>(); // в этой переменной хранится много стран, нужно использовать множественное число
         for (FootballClass footballClass : footballClassList) {
-            String countries = footballClass.getCountry();
+            String countries = footballClass.getCountry(); // в переменной хранится одна страна, лучше переименовать
             country.add(countries);
         }
         return country;
