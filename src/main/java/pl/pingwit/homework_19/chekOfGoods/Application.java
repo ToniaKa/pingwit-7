@@ -17,6 +17,8 @@ public class Application {
         DescriptionOfGood good8 = new DescriptionOfGood(1249, "apple", new BigDecimal("10.18"));
 
         List<DescriptionOfGood> descriptionOfGoods = new ArrayList<>();
+        // такой способ создания списка выглядит более читабельным (тебе не нужно менять список, поэтому unmodifiable list, который вернется из метода List.of(, подходит
+        // List<DescriptionOfGood> descriptionOfGoods = List.of(good1, good2, good3);
         descriptionOfGoods.add(good1);
         descriptionOfGoods.add(good2);
         descriptionOfGoods.add(good3);

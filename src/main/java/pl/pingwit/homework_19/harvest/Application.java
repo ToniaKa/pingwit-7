@@ -12,6 +12,7 @@ public class Application {
     public static void main(String[] args) throws IOException {
 
         ObjectMapper objectMapper = new ObjectMapper();
+        // ObjectMapper умеет вычитывать данные и в коллекцию, необязательно в массив
         Harvest[] harvests = objectMapper.readValue(new File("src/main/java/pl/pingwit/homework_19/harvest/harvest.json"), Harvest[].class);
         System.out.println(Arrays.toString(harvests));
 

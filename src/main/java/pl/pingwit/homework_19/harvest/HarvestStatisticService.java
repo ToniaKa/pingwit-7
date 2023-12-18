@@ -6,8 +6,8 @@ import java.util.Map;
 
 public class HarvestStatisticService {
     public Map<String, HarvestStatistic> getStatistic(Harvest[] harvests) {
-        Map<String, HarvestStatistic> statistica = new HashMap<>();
-        for (int i = 0; i < harvests.length; i++) {
+        Map<String, HarvestStatistic> statistica = new HashMap<>(); // идея подсказывает, что statistics будет более правильно
+        for (int i = 0; i < harvests.length; i++) { // по возможности, используй цикл forEach, как подсказывает идея
             if (statistica.containsKey(harvests[i].getPlant())) {
                 BigDecimal weight = harvests[i].getWeight();
                 BigDecimal square = harvests[i].getSquare();

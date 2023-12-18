@@ -8,7 +8,10 @@ import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 
-public class Chek {
+public class Chek { // предпочтительно использовать перевод, в данном случае, Receipt
+
+    // который будет хранить пары товар - количество
+    // здесь недостаточно только цифры.
     private int total;
     private BigDecimal amount;
     private String date;
@@ -56,9 +59,11 @@ public class Chek {
                 '}';
     }
 
-    public Map<String, Chek> getTotalAmount(List<DescriptionOfGood> list) {
+    // класс Chek - носитель данных, в не нужно помещать сложную логику. Этот метод лучше разместить в отдельном классе
+    public Map<String, Chek> getTotalAmount(List<DescriptionOfGood> list) { // этот метод должен получить список, а вернуть только один чек, не Map
         DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm");
         String format = dateTimeFormatter.format(LocalDateTime.now());
+        // мап должен хранить в качестве значений не чеки, а количество товаров
         Map<String, Chek> finalChek = new HashMap<>();
         for (int i = 0; i < list.size(); i++) {
             if (finalChek.containsKey(list.get(i).name())) {

@@ -3,7 +3,7 @@ package pl.pingwit.homework_19.harvest;
 import java.math.BigDecimal;
 
 public class HarvestStatistic {
-    private BigDecimal totalWeight;
+    private BigDecimal totalWeight; // нет повода не сделать поял final :)
     private BigDecimal totalSquare;
 
     public HarvestStatistic(BigDecimal totalWeight, BigDecimal totalSquare) {
