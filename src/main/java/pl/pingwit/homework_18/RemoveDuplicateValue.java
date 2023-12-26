@@ -25,13 +25,11 @@ public class RemoveDuplicateValue {
 
         for (int i = 0; i < names.size(); i++) {
             for (int j = 0; j < names2.size(); j++) {
-                if (names.get(i).equals(names2.get(j))) {
-                    names.remove(i);
-                }
+                names.removeAll(names2);
             }
         }
-
-        // альтернативное решение: collection1.removeAll(collection2);
         System.out.println(names);
     }
+    // альтернативное решение: collection1.removeAll(collection2);
 }
+

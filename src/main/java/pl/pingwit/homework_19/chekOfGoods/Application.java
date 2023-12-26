@@ -16,20 +16,13 @@ public class Application {
         DescriptionOfGood good7 = new DescriptionOfGood(1248, "potato", new BigDecimal("4.48"));
         DescriptionOfGood good8 = new DescriptionOfGood(1249, "apple", new BigDecimal("10.18"));
 
-        List<DescriptionOfGood> descriptionOfGoods = new ArrayList<>();
+        List<DescriptionOfGood> descriptionOfGoods = List.of(good1,good2,good3,good4,good5,good6,good7,good8);
         // такой способ создания списка выглядит более читабельным (тебе не нужно менять список, поэтому unmodifiable list, который вернется из метода List.of(, подходит
         // List<DescriptionOfGood> descriptionOfGoods = List.of(good1, good2, good3);
-        descriptionOfGoods.add(good1);
-        descriptionOfGoods.add(good2);
-        descriptionOfGoods.add(good3);
-        descriptionOfGoods.add(good4);
-        descriptionOfGoods.add(good5);
-        descriptionOfGoods.add(good6);
-        descriptionOfGoods.add(good7);
-        descriptionOfGoods.add(good8);
 
-        Chek chek = new Chek();
-        Map<String, Chek> finalChek = chek.getTotalAmount(descriptionOfGoods);
-        System.out.println(finalChek);
+       TotalAmountService totalAmountService=new TotalAmountService();
+        Map<String, Receipt> totalAmount = totalAmountService.getTotalAmount(descriptionOfGoods);
+        System.out.println(totalAmount);
+
     }
 }

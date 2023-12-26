@@ -28,7 +28,7 @@ public class VisitDataApplication {
         visitDataArrayList.add(visitData10);
         System.out.println(visitDataArrayList);
 
-        Set<String> findName = findUniqueName(visitDataArrayList);
+        Set<String> findName = findUniqueNames(visitDataArrayList);
         System.out.println(findName);
 
         Set<String> findSite = findUniqueSites(visitDataArrayList);
@@ -41,10 +41,10 @@ public class VisitDataApplication {
         System.out.println(visitsByUser);
     }
 
-    public static Set<String> findUniqueName(List<VisitData> webList) { // findUniqueNames подошло бы еще лучше
+    public static Set<String> findUniqueNames(List<VisitData> webList) { // findUniqueNames подошло бы еще лучше
         SortedSet<String> result = new TreeSet<>();
         for (VisitData web : webList) {
-            String name = web.getName();
+            String name = web.name();
             result.add(name);
         }
         return result;
@@ -53,7 +53,7 @@ public class VisitDataApplication {
     public static Set<String> findUniqueSites(List<VisitData> webList) {
         SortedSet<String> result = new TreeSet<>();
         for (VisitData web : webList) {
-            String sites = web.getSite();
+            String sites = web.site();
             result.add(sites);
         }
 
@@ -63,7 +63,7 @@ public class VisitDataApplication {
     public static Map<String, Integer> countVisitsBySite(List<VisitData> webList) {
         SortedMap<String, Integer> visitBySite = new TreeMap<>();
         for (VisitData web : webList) {
-            String site = web.getSite();
+            String site = web.site();
             if (visitBySite.containsKey(site)) {
                 Integer count = visitBySite.get(site);
                 visitBySite.put(site, count + 1);
@@ -77,7 +77,7 @@ public class VisitDataApplication {
     public static Map<String, Integer> countVisitsByUsers(List<VisitData> weblist) {
         Map<String, Integer> visitsByUsers = new HashMap<>();
         for (VisitData web : weblist) {
-            String name = web.getName();
+            String name = web.name();
             if (visitsByUsers.containsKey(name)) {
                 Integer count = visitsByUsers.get(name);
                 visitsByUsers.put(name, count + 1);
