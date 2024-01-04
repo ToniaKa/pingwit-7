@@ -55,8 +55,8 @@ public class Application {
         несколько адресов на одной улице)
         Найдите в списке уникальные города и соберите их в список.*/
 
-        List<String> uniqueCity = addresses.stream()
-                .map(city -> city.getCity())
+        List<String> uniqueCity = addresses.stream() // это коллекция - лучше подойдет uniqueCities
+                .map(city -> city.getCity())// можно использовать ссылку на метод
                 .distinct()
                 .toList();
         System.out.println(uniqueCity);
@@ -66,7 +66,7 @@ public class Application {
         несколько адресов на одной улице)
         Преобразуйте адреса в объекты типа CityStreet, оставьте только те, у которых городе - Варшава и соберите в set.*/
 
-        Set<CityStreet> warsawCity = addresses.stream()
+        Set<CityStreet> warsawCity = addresses.stream()// в коллекции хранятся улицы Варшавы -> warsawStreets
                 .map(address -> new CityStreet(address.getCity(), address.getStreet()))
                 .filter(cityStreet -> cityStreet.getCity().equals("Warsaw"))
                 .collect(Collectors.toSet());
@@ -81,6 +81,6 @@ public class Application {
         addresses.stream()
                 .map(address -> new CityStreet(address.getCity(), address.getStreet()))
                 .filter(cityStreet -> cityStreet.getCity().equals("Kiev"))
-                .forEach(print -> System.out.println("улица: " + print.getStreet()));
+                .forEach(print -> System.out.println("улица: " + print.getStreet())); // print - недостаточно точно описывает содержимое, cityStreet можно повторить
     }
 }

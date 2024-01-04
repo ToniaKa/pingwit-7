@@ -24,6 +24,11 @@ public class RemoveUserInfoPredicat {
         userInfos.add(userInfo5);
 
         Predicate<UserInfo> userInfoPredicate = user -> user.getName().startsWith("A") || user.getName().startsWith("P") || user.getName().startsWith("E");
+        // альтернативная форма:
+        Predicate<UserInfo> userInfoPredicate2 = user -> {
+            String name = user.getName();
+            return name.startsWith("A") || name.startsWith("P") || name.startsWith("E");
+        };
 
         List<UserInfo> users = userInfos.stream()
                 .filter(userInfoPredicate)
