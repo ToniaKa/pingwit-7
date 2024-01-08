@@ -1,11 +1,6 @@
 package pl.pingwit.homework_19.chekOfGoods;
 
 import java.math.BigDecimal;
-import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
 import java.util.Objects;
 
 public class Receipt { // предпочтительно использовать перевод, в данном случае, Receipt
@@ -18,7 +13,6 @@ public class Receipt { // предпочтительно использоват�
 
     public Receipt() {
     }
-
     public Receipt(int total, BigDecimal amount, String date) {
         this.total = total;
         this.amount = amount;

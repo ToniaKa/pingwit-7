@@ -55,22 +55,22 @@ public class Application {
         несколько адресов на одной улице)
         Найдите в списке уникальные города и соберите их в список.*/
 
-        List<String> uniqueCity = addresses.stream() // это коллекция - лучше подойдет uniqueCities
+        List<String> uniqueCities = addresses.stream() // это коллекция - лучше подойдет uniqueCities
                 .map(city -> city.getCity())// можно использовать ссылку на метод
                 .distinct()
                 .toList();
-        System.out.println(uniqueCity);
+        System.out.println(uniqueCities);
 
       /*  Task 5.
         Возьмите класс Address и создайте список адресов. (в списке сделайте повторяющиеся адреса, несколько адресов в одном городе,
         несколько адресов на одной улице)
         Преобразуйте адреса в объекты типа CityStreet, оставьте только те, у которых городе - Варшава и соберите в set.*/
 
-        Set<CityStreet> warsawCity = addresses.stream()// в коллекции хранятся улицы Варшавы -> warsawStreets
+        Set<CityStreet> warsawStreets = addresses.stream()// в коллекции хранятся улицы Варшавы -> warsawStreets
                 .map(address -> new CityStreet(address.getCity(), address.getStreet()))
                 .filter(cityStreet -> cityStreet.getCity().equals("Warsaw"))
                 .collect(Collectors.toSet());
-        System.out.println(warsawCity);
+        System.out.println(warsawStreets);
 
         /*Task 6.
         Возьмите класс Address и создайте список адресов. (в списке сделайте повторяющиеся адреса, несколько адресов в одном городе,
@@ -81,6 +81,6 @@ public class Application {
         addresses.stream()
                 .map(address -> new CityStreet(address.getCity(), address.getStreet()))
                 .filter(cityStreet -> cityStreet.getCity().equals("Kiev"))
-                .forEach(print -> System.out.println("улица: " + print.getStreet())); // print - недостаточно точно описывает содержимое, cityStreet можно повторить
+                .forEach(cityStreet -> System.out.println("улица: " + cityStreet.getStreet())); // print - недостаточно точно описывает содержимое, cityStreet можно повторить
     }
 }
