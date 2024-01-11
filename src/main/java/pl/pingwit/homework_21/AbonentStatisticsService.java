@@ -16,7 +16,7 @@ public class AbonentStatisticsService {
                 Метод должен возвращать строку - отчет: Количесвто абонентов - жж, самый долгий контракт - хх, средний срок контрактв - хх*/
 
     public String getAgeStatistic(List<Abonent> abonents) {
-        IntSummaryStatistics collect = abonents.stream()
+        IntSummaryStatistics collect = abonents.stream()// переменную лучше назвать statistics. collect очень не информативно
                 .map(Abonent::getDateOfBirth)
                 .map(localDate -> localDate.until(LocalDate.now()))
                 .collect(Collectors.summarizingInt(Period::getYears));
@@ -27,7 +27,7 @@ public class AbonentStatisticsService {
     }
 
     public String getContractDateStatistic(List<Abonent> abonents) {
-        IntSummaryStatistics collect = abonents.stream()
+        IntSummaryStatistics collect = abonents.stream()// переменную лучше назвать statistics. collect очень не информативно
                 .filter(abonent -> abonent.getVip().equals(true))
                 .map(Abonent::getContractDate)
                 .map(localDate -> localDate.until(LocalDate.now()))
