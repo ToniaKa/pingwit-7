@@ -16,24 +16,24 @@ public class AbonentStatisticsService {
                 Метод должен возвращать строку - отчет: Количесвто абонентов - жж, самый долгий контракт - хх, средний срок контрактв - хх*/
 
     public String getAgeStatistic(List<Abonent> abonents) {
-        IntSummaryStatistics collect = abonents.stream()// переменную лучше назвать statistics. collect очень не информативно
+        IntSummaryStatistics statistics = abonents.stream()// переменную лучше назвать statistics. collect очень не информативно
                 .map(Abonent::getDateOfBirth)
                 .map(localDate -> localDate.until(LocalDate.now()))
                 .collect(Collectors.summarizingInt(Period::getYears));
-        return "Количество абонентов: " + collect.getCount()
-                + "; cамый юный: " + collect.getMin() + " лет; "
-                + " самый возрастной: " + collect.getMax() + " лет; "
-                + " средний возраст: " + collect.getAverage() + " лет.";
+        return "Количество абонентов: " + statistics.getCount()
+                + "; cамый юный: " + statistics.getMin() + " лет; "
+                + " самый возрастной: " + statistics.getMax() + " лет; "
+                + " средний возраст: " + statistics.getAverage() + " лет.";
     }
 
     public String getContractDateStatistic(List<Abonent> abonents) {
-        IntSummaryStatistics collect = abonents.stream()// переменную лучше назвать statistics. collect очень не информативно
+        IntSummaryStatistics statistics = abonents.stream()// переменную лучше назвать statistics. collect очень не информативно
                 .filter(abonent -> abonent.getVip().equals(true))
                 .map(Abonent::getContractDate)
                 .map(localDate -> localDate.until(LocalDate.now()))
                 .collect(Collectors.summarizingInt(Period::getYears));
-        return "Количество абонентов: " + collect.getCount()
-                + "; самый долгий контракт: " + collect.getMax() + " лет; "
-                + " средний срок контракт: " + collect.getAverage() + " лет.";
+        return "Количество абонентов: " + statistics.getCount()
+                + "; самый долгий контракт: " + statistics.getMax() + " лет; "
+                + " средний срок контракт: " + statistics.getAverage() + " лет.";
     }
 }

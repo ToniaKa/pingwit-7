@@ -41,20 +41,20 @@ public class Application {
         System.out.println(contractDateStatistic);
 
         MapAbonentService mapAbonentService = new MapAbonentService();
-        Map<String, List<Abonent>> abonentsByCity = mapAbonentService.groupByCityService(abonents);
+        Map<String, List<Abonent>> abonentsByCity = mapAbonentService.groupByCity(abonents);
         System.out.println(abonentsByCity);
 
-        Map<String, Abonent> contractes = mapAbonentService.contractIdService(abonents);
+        Map<String, Abonent> contractes = mapAbonentService.mapNonVipByIds(abonents);
         System.out.println(contractes);
 
         ListAbonentService abonentService = new ListAbonentService();
-        boolean isVip = abonentService.isVip(abonents, "Kiev");
+        boolean isVip = abonentService.cityHasAnyVip(abonents, "Kiev");
         System.out.println(isVip);
 
-        boolean isAllowedDate = abonentService.isAllowedDate(abonents, LocalDate.of(2016, 12, 30));
+        boolean isAllowedDate = abonentService.allContractedBefore(abonents, LocalDate.of(2016, 12, 30));
         System.out.println(isAllowedDate);
 
-        Optional<Abonent> anyAbonent = abonentService.getAnyAbonent(abonents, "Tomsk");
+        Optional<Abonent> anyAbonent = abonentService.getAnyAbonentFromCity(abonents, "Tomsk");
         System.out.println(anyAbonent);
     }
 }

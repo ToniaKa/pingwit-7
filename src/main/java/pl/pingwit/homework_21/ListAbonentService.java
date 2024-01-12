@@ -10,20 +10,20 @@ public class ListAbonentService {
              -  метод должен принять список абонентов и город, а вернуть true есть ли в этом городе хоть один вип-абонент (иначе вернуть false) (anyMatch)
              -  метод должен принять список обонентов и дату, а вернуть true если все аюоненты в списке подключились до этой даты (allMatch)
              -  метод должен принять список абонентов и город, и вернуть любого абонента из этого города, а если из этого города абонентов нет - выбросить исключение (findAny, optional)*/
-    public boolean isVip(List<Abonent> abonents, String city) { // название для метода можно выбрать поточнее: cityHasAnyVip...
+    public boolean cityHasAnyVip(List<Abonent> abonents, String city) { // название для метода можно выбрать поточнее: cityHasAnyVip...
         return abonents.stream()
                 .anyMatch(abonent -> abonent.getVip().equals(true) && abonent.getCity().equals(city)); // проверка abonent.getVip().equals(true) избыточна, abonent.getVip() уже вернет true или false. достаточно abonent.getVip() && abonent.getCity().equals(city)
     }
 
-    public boolean isAllowedDate(List<Abonent> abonents, LocalDate contractDate) { // название для метода можно выбрать поточнее: allContractedBefore ..
+    public boolean allContractedBefore(List<Abonent> abonents, LocalDate contractDate) { // название для метода можно выбрать поточнее: allContractedBefore ..
         return abonents.stream()
                 .allMatch(abonent -> abonent.getContractDate().isBefore(contractDate));
     }
 
-    public Optional<Abonent> getAnyAbonent(List<Abonent> abonents, String city) { // название для метода можно выбрать поточнее: getAnyAbonentFromCity
+    public Optional<Abonent> getAnyAbonentFromCity(List<Abonent> abonents, String city) { // название для метода можно выбрать поточнее: getAnyAbonentFromCity
         Abonent abonent = abonents.stream()
-                .findAny() // здесь надо поменять местами findAny vs filter. сейчас, даже если у тебя в списке есть абонент из этого города, но он идет не первым, метод бросит ошибку
                 .filter(anyAbonent -> anyAbonent.getCity().equals(city))
+                .findAny() // здесь надо поменять местами findAny vs filter. сейчас, даже если у тебя в списке есть абонент из этого города, но он идет не первым, метод бросит ошибку
                 .orElseThrow(() -> new RuntimeException("В данном городе абонентов нет!"));
         return Optional.ofNullable(abonent);
     }
