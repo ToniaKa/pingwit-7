@@ -15,7 +15,7 @@ public class ListAbonentService {
                 .anyMatch(abonent -> abonent.getVip().equals(true) && abonent.getCity().equals(city)); // проверка abonent.getVip().equals(true) избыточна, abonent.getVip() уже вернет true или false. достаточно abonent.getVip() && abonent.getCity().equals(city)
     }
 
-    public boolean allContractedBefore(List<Abonent> abonents, LocalDate contractDate) { // название для метода можно выбрать поточнее: allContractedBefore ..
+    public boolean allContractedBefore(List<Abonent> abonents, LocalDate contractDate) {// название для метода можно выбрать поточнее: allContractedBefore ..
         return abonents.stream()
                 .allMatch(abonent -> abonent.getContractDate().isBefore(contractDate));
     }
