@@ -8,12 +8,15 @@ public class PalindromMain {
         System.out.println("Введите пожалуйста слово: ");
         String word = scanner.nextLine();
 
-        StringUtilsPalindromeChecker palindrom = new StringUtilsPalindromeChecker();
+        //StringUtilsPalindromeChecker palindrom = new StringUtilsPalindromeChecker();
+        ArrayPalindromeChecker arrayPalindromeChecker=new ArrayPalindromeChecker();
 
-        boolean isPalindrom = palindrom.isPalindrome(word);  // достаточно названия isPalindrome
+        boolean isPalindrom1 = arrayPalindromeChecker.isPalindrom(word);
+        System.out.println(isPalindrom1 ? "Это слово палиндром!" : "Это слово не палиндром!");
+
+        /*boolean isPalindrom = palindrom.isPalindrome(word);  // достаточно названия isPalindrome
         // выведем сообщения:
-
-        System.out.println(isPalindrom ? "Это слово палиндром!" : "Это слово не палиндром!");
+        System.out.println(isPalindrom ? "Это слово палиндром!" : "Это слово не палиндром!");*/
     }
 }
 
