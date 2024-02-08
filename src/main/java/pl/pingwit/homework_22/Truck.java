@@ -11,8 +11,9 @@ public class Truck extends Thread {
     public void run() {
         for (int i = 0; i < 1250; i++) {
             gravelHeap.increase();
+            System.out.println("Привез 2 тонны щебня");
         }
-        System.out.println("Привез 2 тонны щебня");
+
         try {
             Thread.sleep(100);
         } catch (InterruptedException e) {
