@@ -25,8 +25,8 @@ SELECT orders.id, users.email, orders.created_at, products.name, order_items.qua
 	WHERE created_at > '2023-02-19';
 
 6. Выведите все колонки таблицы users + заказы пользователя, если они у него есть
-SELECT *
-	FROM public.users u JOIN orders o ON u.id=o.user_id;
+SELECT u.id, u.name, u.surname, u.email, u.phone,o.created_at, p.name, oi.quantity
+	FROM public.users u JOIN orders o ON u.id=o.user_id JOIN order_items oi ON o.id=oi.order_id JOIN products p ON p.id=oi.product_id
 
 7. Выведите дату и количество заказов, сделанных в эту дату
 SELECT created_at,sum(quantity)
