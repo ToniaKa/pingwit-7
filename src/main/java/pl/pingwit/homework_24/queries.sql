@@ -29,8 +29,9 @@ SELECT *
 	FROM public.users u JOIN orders o ON u.id=o.user_id;
 
 7. Выведите дату и количество заказов, сделанных в эту дату
-SELECT quantity, created_at
-	FROM public.orders o JOIN order_items oi ON o.id=oi.order_id;
+SELECT created_at,sum(quantity)
+    FROM orders o JOIN order_items oi ON o.id=oi.order_id
+    GROUP BY created_at
 
 8. Выведите products.name, и sum(quantity) проданных товаров для всех товаров, которых продали меньше 15 штук sum(quantity) < 15
 SELECT p.name, sum(quantity)
