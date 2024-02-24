@@ -19,7 +19,7 @@ public class ProductRepository {
         this.dataSource = dataSource;
     }
 
-    public int runCountQuery() { // этому методу больше подойдет название countProducts или что-то типа
+    public int countProducts() { // этому методу больше подойдет название countProducts или что-то типа
         try {
             Connection connection = dataSource.getConnection();
             PreparedStatement preparedStatement = connection.prepareStatement(" SELECT count(*) FROM products;");
@@ -39,7 +39,7 @@ public class ProductRepository {
             Connection connection = dataSource.getConnection();
             PreparedStatement preparedStatement = connection.prepareStatement(String.format("SELECT * FROM products WHERE id='%d'", id));
             ResultSet resultSet = preparedStatement.executeQuery();
-            while (resultSet.next()) { // тк здесь ищем только один продукт, используй не while, а if
+            if (resultSet.next()) { // тк здесь ищем только один продукт, используй не while, а if
                 return Optional.of(new Product(resultSet.getInt(1), resultSet.getString(2), resultSet.getString(3), resultSet.getBigDecimal(4)));
             }
             return Optional.empty();
@@ -48,17 +48,17 @@ public class ProductRepository {
         }
     }
 
-    public Optional<List<Product>> findProductByName(String name) { // возвращаемое значение этого метода нужно изменить, возвращать список продуктов, а не optional. если продуктов с таким именем не нашлось - возвращаем пустой список
+    public List<Product> findProductByName(String name) { // возвращаемое значение этого метода нужно изменить, возвращать список продуктов, а не optional. если продуктов с таким именем не нашлось - возвращаем пустой список
         try {
             Connection connection = dataSource.getConnection();
             PreparedStatement preparedStatement = connection.prepareStatement(String.format("SELECT * FROM products WHERE name='%s'", name));
             ResultSet resultSet = preparedStatement.executeQuery();
             List<Product> products = new ArrayList<>();
-
             while (resultSet.next()) {
                 products.add(new Product(resultSet.getInt(1), resultSet.getString(2), resultSet.getString(3), resultSet.getBigDecimal(4)));
             }
-            return Optional.of(products);
+            return products;
+
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
@@ -95,11 +95,11 @@ public class ProductRepository {
         }
     }
 
-    public Integer deleteProductById(Integer id) {  // лучше изменить тип возвращаемого значения на void.
+    public void deleteProductById(Integer id) {  // лучше изменить тип возвращаемого значения на void.
         try {
             Connection connection = dataSource.getConnection();
             PreparedStatement preparedStatement = connection.prepareStatement(String.format("DELETE FROM products WHERE id='%d'", id));
-            return preparedStatement.executeUpdate();
+            preparedStatement.execute();
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }

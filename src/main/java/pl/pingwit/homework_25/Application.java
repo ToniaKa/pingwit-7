@@ -28,7 +28,7 @@ public class Application {
             int operation = scanner.nextInt();
 
             if (operation == 1) {
-                int productCount = productRepository.runCountQuery();
+                int productCount = productRepository.countProducts();
                 System.out.printf("В корзине %s продуктов%n", productCount);
                 System.out.println("--------------------------------------");
             } else if (operation == 2) {
@@ -48,13 +48,15 @@ public class Application {
                 System.out.println("Введите наименование продукта для поиска:");
 
                 String name = scanner.next();
-                Optional<List<Product>> productByName = productRepository.findProductByName(name);
-                if (productByName.isPresent()) {
-                    System.out.println(productByName.get());
-                } else {
-                    System.out.printf("Продукт с наименованием = %S не найден!%n", name);
+                List<Product> productByName = productRepository.findProductByName(name);
+                if(!productByName.isEmpty()){
+                    System.out.println(productByName);
+                }else {
+                    System.out.printf("Продукт с именем = %s не найден!%n", name);
                     System.out.println("--------------------------------------");
                 }
+
+
             } else if (operation == 4) {
 
                 System.out.println("Создаем продукт.");
@@ -76,13 +78,9 @@ public class Application {
             } else if (operation == 6) {
                 System.out.println("Введите id продукта для удаления:");
                 int productIdByDelete = scanner.nextInt();
-                Integer i = productRepository.deleteProductById(productIdByDelete);
-                if (productIdByDelete == i) {
-                    System.out.printf("Продукт с ID = %d не найден!%n", productIdByDelete);
-                } else {
-                    productRepository.deleteProductById(productIdByDelete);
-                    System.out.printf("Продукт с ID = %d успешно удален!%n", productIdByDelete);
-                }
+                productRepository.deleteProductById(productIdByDelete);
+                System.out.printf("Продукт с ID = %d успешно удален!%n", productIdByDelete);
+
             } else {
                 System.out.println("До свидания!");
                 break;
