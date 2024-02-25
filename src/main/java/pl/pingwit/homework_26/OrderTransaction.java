@@ -27,8 +27,11 @@ public class OrderTransaction {
         try {
             Connection connection = dataSource.getConnection();
             connection.setAutoCommit(false);
+            // имя переменной с постфиксом 1 говорит о том, что для нее стоит придумать другое имя.
+            // В данном случае, можно назвать ее createOrderStmt, а вторую подобную - createOrderItemStmt
             PreparedStatement preparedStatement1 = connection.prepareStatement("INSERT INTO order_items(id, order_id, product_id, quantity) VALUES (?,?,?,?)");
 
+            // использовала sequence - отлично!
             int id = getNextOrderItemsId(dataSource);
             preparedStatement1.setInt(1, id);
             preparedStatement1.setInt(2, 6);
